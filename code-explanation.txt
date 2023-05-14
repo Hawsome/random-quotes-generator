@@ -1,0 +1,196 @@
+HTML:
+Sure! Here's an explanation of each line of the provided HTML code:
+
+```html
+<!DOCTYPE html>
+```
+This line declares the document type as HTML.
+
+```html
+<html>
+```
+This line marks the beginning of the HTML document.
+
+```html
+<head>
+```
+This section contains metadata and other information about the HTML document.
+
+```html
+<meta charset="utf-8">
+```
+This meta tag specifies the character encoding for the HTML document as UTF-8.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+This meta tag sets the viewport properties, allowing the web page to be responsive and adjust to different device widths.
+
+```html
+<title>Random Quote Generator</title>
+```
+This tag specifies the title of the HTML document, which appears in the browser's title bar or tab.
+
+```html
+<meta name="description" content="Generate random quotes and get inspired.">
+```
+This meta tag provides a brief description of the HTML document for search engine results and social media sharing.
+
+```html
+<meta name="author" content="Olaoluwa Akinfenwa">
+```
+This meta tag specifies the author of the HTML document.
+
+```html
+<meta name="robots" content="index, follow">
+```
+This meta tag instructs search engine crawlers to index and follow the links on the page.
+
+```html
+<link rel="stylesheet" type="text/css" href="style.css">
+```
+This link tag includes an external CSS file named "style.css" to style the HTML document.
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&family=Georgia:wght@400;700&family=Open+Sans:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
+```
+This link tag imports Google Fonts, which provides the specified fonts to be used in the HTML document.
+
+```html
+<script src="https://kit.fontawesome.com/7624c7c0d1.js" crossorigin="anonymous"></script>
+```
+This script tag includes the Font Awesome JavaScript library, allowing the use of Font Awesome icons in the HTML document.
+
+```html
+</head>
+```
+This marks the end of the head section.
+
+```html
+<body>
+```
+This marks the beginning of the body section, which contains the visible content of the HTML document.
+
+```html
+<h1>Random Quote Generator</h1>
+```
+This line displays a heading with the text "Random Quote Generator".
+
+```html
+<div id="quote"></div>
+```
+This line creates a div element with the id "quote" to hold the generated quote.
+
+```html
+<div id="author"></div>
+```
+This line creates a div element with the id "author" to hold the author of the generated quote.
+
+```html
+<button id="generate">Generate Quote</button>
+```
+This line creates a button with the id "generate" and the text "Generate Quote".
+
+```html
+<footer>
+```
+This section marks the beginning of the footer, which typically contains information about the author or the website.
+
+```html
+<p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>
+```
+This line displays a paragraph with the copyright symbol, the year, and the author's name.
+
+```html
+<div class="social-icons">
+```
+This line creates a div element with the class "social-icons" to contain social media icons.
+
+```html
+<a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin" target="_blank">
+```
+This line creates an anchor tag (`<a>`) with the `href` attribute set to a LinkedIn profile URL. The `class` attribute is set to "linkedin" for styling purposes. The `target` attribute is set to "_blank" to open the link in a new tab.
+
+```html
+<i class="fab fa-linkedin-in"></i>
+```
+This line creates an `<i>` element with the class "fab fa-linkedin-in". It utilizes the Font Awesome icon library to display the LinkedIn icon.
+
+```html
+<a href="https://twitter.com/hawsome_a" class="twitter" target="_blank">
+```
+This line creates another anchor tag with the `href` attribute set to a Twitter profile URL. The `class` attribute is set to "twitter" for styling purposes. The `target` attribute is set to "_blank" to open the link in a new tab.
+
+```html
+<i class="fab fa-twitter"></i>
+```
+This line creates an `<i>` element with the class "fab fa-twitter". It uses the Font Awesome icon library to display the Twitter icon.
+
+```html
+<a href="mailto:awesome.akinfenwa@outlook.com" class="email" target="_blank">
+```
+This line creates an anchor tag with the `href` attribute set to an email address. Clicking this link will open the user's default email client. The `class` attribute is set to "email" for styling purposes. The `target` attribute is set to "_blank" to open the link in a new tab.
+
+```html
+<i class="far fa-envelope"></i>
+```
+This line creates an `<i>` element with the class "far fa-envelope". It utilizes the Font Awesome icon library to display an envelope icon.
+
+```html
+</div>
+```
+This line marks the end of the `social-icons` div.
+
+```html
+</footer>
+```
+This line marks the end of the footer section.
+
+```html
+<script src="script.js" defer></script>
+```
+This line includes an external JavaScript file named "script.js". The `defer` attribute is used to defer the execution of the script until after the HTML document has been parsed.
+
+```html
+</body>
+```
+This marks the end of the body section.
+
+```html
+</html>
+```
+This marks the end of the HTML document.
+
+In summary, the HTML code consists of metadata, the visible content of the webpage, and references to external CSS stylesheets and JavaScript files. It includes a header with a title and various meta tags, a body section containing the main content and a footer, and script tags for JavaScript functionality.
+
+JavaScript:
+
+```javascript
+// Generate Random Quote
+function generateRandomQuote() {
+    fetch("https://api.quotable.io/random")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("quote").textContent = data.content;
+            document.getElementById("author").textContent = data.author;
+        })
+        .catch(error => {
+            console.log("Error:", error);
+        });
+}
+```
+This function, `generateRandomQuote()`, is responsible for fetching a random quote from the "https://api.quotable.io/random" API. It uses the Fetch API to make an HTTP request to the provided URL. The response is converted to JSON using the `.json()` method. Then, the content of the quote is assigned to the `textContent` property of the element with the `id` "quote", and the author is assigned to the `textContent` property of the element with the `id` "author". If there is an error during the API request or JSON parsing, the error will be logged to the console.
+
+```javascript
+// Trigger Generation
+document.getElementById("generate").addEventListener("click", generateRandomQuote);
+```
+This line adds an event listener to the element with the `id` "generate". It listens for a "click" event on that element and triggers the `generateRandomQuote()` function when the event occurs. Essentially, when the button with the `id` "generate" is clicked, it will call the `generateRandomQuote()` function.
+
+```javascript
+// Initial Quote Generation
+generateRandomQuote();
+```
+This line calls the `generateRandomQuote()` function immediately after the script is loaded. It ensures that when the page is first loaded, an initial random quote is generated and displayed.
+
+In summary, this JavaScript code defines a function to fetch and display random quotes from an API, adds an event listener to a button to trigger the quote generation, and generates an initial quote when the page is loaded.
