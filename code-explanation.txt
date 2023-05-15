@@ -1,196 +1,203 @@
 HTML:
-Sure! Here's an explanation of each line of the provided HTML code:
 
-```html
-<!DOCTYPE html>
-```
-This line declares the document type as HTML.
+<!DOCTYPE html>: This is the document type declaration and specifies that the document is an HTML5 document.
 
-```html
-<html>
-```
-This line marks the beginning of the HTML document.
+<html>: The root element of an HTML page.
 
-```html
-<head>
-```
-This section contains metadata and other information about the HTML document.
+<head>: Contains metadata and external resources used by the page. It's not displayed on the actual webpage.
 
-```html
-<meta charset="utf-8">
-```
-This meta tag specifies the character encoding for the HTML document as UTF-8.
+<meta charset="utf-8">: Specifies the character encoding of the document as UTF-8, which supports a wide range of characters.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Sets the viewport properties for mobile responsiveness. It adjusts the page width to the device's screen width and sets the initial zoom level to 1.0.
+<title>Random Quote Generator</title>: Sets the title of the webpage, which is displayed in the browser's title bar or tab.
+<meta name="description" content="Generate random quotes and get inspired.">: Provides a brief description of the webpage for search engines and other applications.
+<meta name="author" content="Olaoluwa Akinfenwa">: Specifies the author of the webpage.
+<meta name="robots" content="index, follow">: Instructs search engine robots to index and follow the links on the page.
+<link rel="stylesheet" type="text/css" href="style.css">: Links an external CSS file called "style.css" to the HTML document to apply styles to the page.
+<link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&family=Georgia:wght@400;700&family=Open+Sans:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">: Loads external font styles from Google Fonts to be used in the webpage.
+<script src="https://kit.fontawesome.com/7624c7c0d1.js" crossorigin="anonymous"></script>: Loads the Font Awesome icon library from a CDN to use icons in the webpage.
+<!-- <script src="html2canvas.min.js"></script> Include html2canvas library -->: A commented line indicating the potential inclusion of the html2canvas library for capturing screenshots of the webpage.
+<body>: The main content of the webpage that is visible to users.
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
-This meta tag sets the viewport properties, allowing the web page to be responsive and adjust to different device widths.
+<h1>Random Quote Generator</h1>: Displays the main heading of the webpage.
+<div id="quote"></div>: An empty <div> element with the ID "quote" where the generated quote will be displayed.
+<div id="author"></div>: An empty <div> element with the ID "author" where the author of the quote will be displayed.
+<button id="generate">Generate Quote</button>: A button with the ID "generate" that triggers the generation of a new quote.
+<div class="share-wrapper">: A wrapper <div> for the share button.
+<button id="share">Share Quote</button>: A button with the ID "share" for sharing the quote.
+<footer>: Contains the footer content of the webpage.
+<p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>: Displays a copyright notice.
+<div class="social-icons">: A wrapper <div> for social media icons.
+<a>: Anchor tags for each social media icon with corresponding links and target attributes.
+<script src="script.js" defer></script>: Includes an external JavaScript file called "script.js" and defers its execution. This script file is responsible for adding functionality and interactivity to the webpage.
 
-```html
-<title>Random Quote Generator</title>
-```
-This tag specifies the title of the HTML document, which appears in the browser's title bar or tab.
-
-```html
-<meta name="description" content="Generate random quotes and get inspired.">
-```
-This meta tag provides a brief description of the HTML document for search engine results and social media sharing.
-
-```html
-<meta name="author" content="Olaoluwa Akinfenwa">
-```
-This meta tag specifies the author of the HTML document.
-
-```html
-<meta name="robots" content="index, follow">
-```
-This meta tag instructs search engine crawlers to index and follow the links on the page.
-
-```html
-<link rel="stylesheet" type="text/css" href="style.css">
-```
-This link tag includes an external CSS file named "style.css" to style the HTML document.
-
-```html
-<link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&family=Georgia:wght@400;700&family=Open+Sans:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
-```
-This link tag imports Google Fonts, which provides the specified fonts to be used in the HTML document.
-
-```html
-<script src="https://kit.fontawesome.com/7624c7c0d1.js" crossorigin="anonymous"></script>
-```
-This script tag includes the Font Awesome JavaScript library, allowing the use of Font Awesome icons in the HTML document.
-
-```html
-</head>
-```
-This marks the end of the head section.
-
-```html
-<body>
-```
-This marks the beginning of the body section, which contains the visible content of the HTML document.
-
-```html
-<h1>Random Quote Generator</h1>
-```
-This line displays a heading with the text "Random Quote Generator".
-
-```html
-<div id="quote"></div>
-```
-This line creates a div element with the id "quote" to hold the generated quote.
-
-```html
-<div id="author"></div>
-```
-This line creates a div element with the id "author" to hold the author of the generated quote.
-
-```html
-<button id="generate">Generate Quote</button>
-```
-This line creates a button with the id "generate" and the text "Generate Quote".
-
-```html
-<footer>
-```
-This section marks the beginning of the footer, which typically contains information about the author or the website.
-
-```html
-<p>&copy; 2023 Olaoluwa Akinfenwa. All rights reserved.</p>
-```
-This line displays a paragraph with the copyright symbol, the year, and the author's name.
-
-```html
-<div class="social-icons">
-```
-This line creates a div element with the class "social-icons" to contain social media icons.
-
-```html
-<a href="https://www.linkedin.com/in/olaoluwa-akinfenwa-b44026208" class="linkedin" target="_blank">
-```
-This line creates an anchor tag (`<a>`) with the `href` attribute set to a LinkedIn profile URL. The `class` attribute is set to "linkedin" for styling purposes. The `target` attribute is set to "_blank" to open the link in a new tab.
-
-```html
-<i class="fab fa-linkedin-in"></i>
-```
-This line creates an `<i>` element with the class "fab fa-linkedin-in". It utilizes the Font Awesome icon library to display the LinkedIn icon.
-
-```html
-<a href="https://twitter.com/hawsome_a" class="twitter" target="_blank">
-```
-This line creates another anchor tag with the `href` attribute set to a Twitter profile URL. The `class` attribute is set to "twitter" for styling purposes. The `target` attribute is set to "_blank" to open the link in a new tab.
-
-```html
-<i class="fab fa-twitter"></i>
-```
-This line creates an `<i>` element with the class "fab fa-twitter". It uses the Font Awesome icon library to display the Twitter icon.
-
-```html
-<a href="mailto:awesome.akinfenwa@outlook.com" class="email" target="_blank">
-```
-This line creates an anchor tag with the `href` attribute set to an email address. Clicking this link will open the user's default email client. The `class` attribute is set to "email" for styling purposes. The `target` attribute is set to "_blank" to open the link in a new tab.
-
-```html
-<i class="far fa-envelope"></i>
-```
-This line creates an `<i>` element with the class "far fa-envelope". It utilizes the Font Awesome icon library to display an envelope icon.
-
-```html
-</div>
-```
-This line marks the end of the `social-icons` div.
-
-```html
-</footer>
-```
-This line marks the end of the footer section.
-
-```html
-<script src="script.js" defer></script>
-```
-This line includes an external JavaScript file named "script.js". The `defer` attribute is used to defer the execution of the script until after the HTML document has been parsed.
-
-```html
-</body>
-```
-This marks the end of the body section.
-
-```html
-</html>
-```
 This marks the end of the HTML document.
 
 In summary, the HTML code consists of metadata, the visible content of the webpage, and references to external CSS stylesheets and JavaScript files. It includes a header with a title and various meta tags, a body section containing the main content and a footer, and script tags for JavaScript functionality.
 
+CSS: 
+
+```css
+html, body {
+    margin: 0;
+    padding: 0;
+}
+```
+This sets the margin and padding of the `html` and `body` elements to 0, effectively removing any default spacing or indentation.
+
+```css
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif; /* Update the font family */
+}
+```
+This styles the `h1` element which represents the heading of the webpage. It uses flexbox properties to vertically and horizontally center the heading. It has a height of 100 pixels, a background color of `#f2f2f2` (light gray), text color of `#333` (dark gray), font size of 36 pixels, and uses the `'Helvetica'` font family.
+
+```css
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px); /* Adjust the height based on the header and footer height */
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+```
+This styles the `.main-content` class, which is a container for the main content of the webpage. It uses flexbox properties to vertically and horizontally center the content. The `min-height` property sets the minimum height of the container to fill the viewport height minus 200 pixels (to accommodate the header and footer). It uses the `'Arial'` font family and has a background color of `#fff` (white).
+
+The remaining styles in the CSS code provide specific styles for different elements such as the quote container (`#quote`), author container (`#author`), generate button (`#generate`), share button (`#share`), footer (`footer`), and social icons (`social-icons`).
+
+The CSS code also includes responsive styles using media queries. These styles adjust the font sizes and other properties for different screen sizes. There are media queries for screen widths less than or equal to 360 pixels, between 361 and 767 pixels, between 768 and 991 pixels, and between 992 and 1200 pixels.
+
+Overall, the CSS code is responsible for the visual appearance and layout of the webpage, making it more colorful and defining the responsive behavior for different screen sizes.
+
 JavaScript:
+
+```javascript
+// Quotes Data Source
+const quotes = [
+  {
+    content: "It is what it is, but what it is is not what it's meant to be.",
+    author: "Awesome Akinfenwa",
+  },
+  {
+    content: "Life's Not Hard [LNH].",
+    author: "Awesome Akinfenwa",
+  },
+  // Add more quotes here
+];
+```
+
+This section defines a data source for quotes. It contains an array of quote objects, where each object has a `content` property representing the quote content and an `author` property representing the author of the quote. You can add more quotes to this array.
+
+```javascript
+let lastLocalQuote = null; // Track the last displayed local quote
+
+// Generate Random Quote from Local Data Source
+function generateLocalRandomQuote() {
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+
+  // Check if the randomly selected quote is the same as the last displayed local quote
+  if (lastLocalQuote !== null && quotes.length > 1) {
+    while (quotes[randomIndex] === lastLocalQuote) {
+      randomIndex = Math.floor(Math.random() * quotes.length);
+    }
+  }
+
+  const randomQuote = quotes[randomIndex];
+  lastLocalQuote = randomQuote; // Update the last displayed local quote
+
+  // Display the random quote
+  document.getElementById("quote").textContent = randomQuote.content;
+  document.getElementById("author").textContent = randomQuote.author;
+}
+```
+
+This code defines a function `generateLocalRandomQuote()` that generates a random quote from the local data source (`quotes` array). It selects a random quote by generating a random index based on the length of the `quotes` array. If the selected quote is the same as the last displayed local quote and there is more than one quote available, it continues generating a new random index until a different quote is selected. The selected quote is then displayed on the webpage by updating the content of the `quote` and `author` elements.
+
+```javascript
+// Generate Random Quote from API
+function generateAPIRandomQuote() {
+  fetch("https://api.quotable.io/random")
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("quote").textContent = data.content;
+      document.getElementById("author").textContent = data.author;
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+}
+```
+
+This code defines a function `generateAPIRandomQuote()` that generates a random quote from an external API (`https://api.quotable.io/random`). It uses the `fetch` function to make an HTTP request to the API and retrieves a random quote. The response is converted to JSON format, and the quote content and author are then displayed on the webpage.
 
 ```javascript
 // Generate Random Quote
 function generateRandomQuote() {
-    fetch("https://api.quotable.io/random")
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("quote").textContent = data.content;
-            document.getElementById("author").textContent = data.author;
-        })
-        .catch(error => {
-            console.log("Error:", error);
-        });
+  const randomNum = Math.random();
+  if (randomNum < 0.3) {
+    // Generate quote from local data source
+    generateLocalRandomQuote();
+  } else {
+    // Generate quote from API
+    generateAPIRandomQuote();
+  }
 }
 ```
-This function, `generateRandomQuote()`, is responsible for fetching a random quote from the "https://api.quotable.io/random" API. It uses the Fetch API to make an HTTP request to the provided URL. The response is converted to JSON using the `.json()` method. Then, the content of the quote is assigned to the `textContent` property of the element with the `id` "quote", and the author is assigned to the `textContent` property of the element with the `id` "author". If there is an error during the API request or JSON parsing, the error will be logged to the console.
+
+This code defines a function `generateRandomQuote()` that generates a random quote. It generates a random number between 0 and 1 using `Math.random()`. If the random number is less than 0.3, it calls `generateLocalRandomQuote()` to generate a quote from the local data source. Otherwise, it calls `generateAPIRandomQuote()` to generate a quote from the API.
 
 ```javascript
 // Trigger Generation
-document.getElementById("generate").addEventListener("click", generateRandomQuote);
-```
-This line adds an event listener to the element with the `id` "generate". It listens for a "click" event on that element and triggers the `generateRandomQuote()` function when the event occurs. Essentially, when the button with the `id` "generate" is clicked, it will call the `generateRandomQuote()` function.
+document.getElementById
+
+This code attaches a click event listener to the element with the id "generate" (presumably a button). When the button is clicked, the `generateRandomQuote()` function is called, triggering the generation of a random quote.
 
 ```javascript
 // Initial Quote Generation
 generateRandomQuote();
 ```
-This line calls the `generateRandomQuote()` function immediately after the script is loaded. It ensures that when the page is first loaded, an initial random quote is generated and displayed.
 
-In summary, this JavaScript code defines a function to fetch and display random quotes from an API, adds an event listener to a button to trigger the quote generation, and generates an initial quote when the page is loaded.
+This line invokes the `generateRandomQuote()` function to generate an initial random quote when the page loads.
+
+```javascript
+// Share Quote
+function shareQuote() {
+  const quote = document.getElementById("quote").textContent;
+  const author = document.getElementById("author").textContent;
+  const shareText = `"${quote}" - ${author}`;
+
+  // Create a temporary element to hold the quote text
+  const tempElem = document.createElement("textarea");
+  tempElem.value = shareText;
+  document.body.appendChild(tempElem);
+  tempElem.select();
+
+  // Copy the quote text to the clipboard
+  document.execCommand("copy");
+  document.body.removeChild(tempElem);
+
+  // Show a success message
+  alert("The quote has been copied to the clipboard!");
+}
+```
+
+This code defines a function `shareQuote()` that is triggered when the user clicks the element with the id "share" (presumably another button). It retrieves the quote and author from the webpage, constructs a string with the quote text and author, creates a temporary textarea element, sets its value to the constructed string, appends it to the document body, selects its contents, copies the text to the clipboard using the `execCommand("copy")` method, removes the temporary element, and displays an alert indicating that the quote has been copied to the clipboard.
+
+```javascript
+// Trigger Share
+document.getElementById("share").addEventListener("click", shareQuote);
+```
+
+This code attaches a click event listener to the element with the id "share" (presumably a button). When the button is clicked, the `shareQuote()` function is called, allowing the user to share the quote.
+
+In summary, this JavaScript code sets up a webpage where users can generate random quotes either from a local data source or an external API. The generated quote is displayed on the webpage, and users can also share the quote by copying it to the clipboard.
