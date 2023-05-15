@@ -61,30 +61,23 @@ function generateLocalRandomQuote() {
   generateRandomQuote();
   
   // Share Quote
-  function shareQuote() {
-    const quoteElem = document.getElementById("quote");
-  
-    // Capture the screenshot using html2canvas
-    html2canvas(quoteElem).then((canvas) => {
-      // Convert the canvas to an image data URL
-      const imageData = canvas.toDataURL();
-  
-      // Create an anchor element with the image as a data URL
-      const anchorElem = document.createElement("a");
-      anchorElem.href = imageData;
-      anchorElem.download = "quote_screenshot.png";
-      anchorElem.style.display = "none";
-  
-      // Append the anchor element to the document body
-      document.body.appendChild(anchorElem);
-  
-      // Trigger a click event on the anchor element
-      anchorElem.click();
-  
-      // Clean up by removing the anchor element
-      document.body.removeChild(anchorElem);
-    });
-  }
-  
-  // Trigger Share
-  document.getElementById("share").addEventListener("click", shareQuote);
+function shareQuote() {
+  const quote = document.getElementById("quote").textContent;
+  const author = document.getElementById("author").textContent;
+  const shareText = `"${quote}" - ${author}`;
+
+  // Create a temporary element to hold the quote text
+  const tempElem = document.createElement("textarea");
+  tempElem.value = shareText;
+  document.body.appendChild(tempElem);
+  tempElem.select();
+
+  // Copy the quote text to the clipboard
+  document.execCommand("copy");
+  document.body.removeChild(tempElem);
+
+  // Show a success message
+  alert("The quote has been copied to the clipboard!");
+}
+// Trigger Share
+document.getElementById("share").addEventListener("click", shareQuote);
