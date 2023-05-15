@@ -36,6 +36,7 @@ h1 {
     margin-bottom: 20px;
     color: #555;
     font-family: 'Georgia', serif; /* Update the font family */
+    margin-top: 20px;
 }
 
 /* Author container style */
@@ -68,6 +69,58 @@ h1 {
 #generate:hover {
     background-color: #3277b3;
     transform: scale(1.05); /* Add a slight scale effect */
+}
+
+.share-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+    margin-bottom: 30px;
+}
+
+#share {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif; /* Update the font family */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#share:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    animation: bounce 1.1s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Footer style */
@@ -131,6 +184,9 @@ footer {
         transform: scale(1);
     }
 }
+
+/* Responsive styles */
+
 @media (max-width: 360px) {
     h1 {
         font-size: 24px;
