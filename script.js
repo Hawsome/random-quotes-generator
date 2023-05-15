@@ -14,18 +14,15 @@ const quotes = [
   let lastLocalQuote = null; // Track the last displayed local quote
   
   // Generate Random Quote from Local Data Source
-  function generateLocalRandomQuote() {
-    let randomIndex = Math.floor(Math.random() * quotes.length);
-  
-    // Check if the randomly selected quote is the same as the last displayed local quote
-    if (lastLocalQuote !== null && quotes.length > 1) {
-      while (quotes[randomIndex] === lastLocalQuote) {
-        randomIndex = Math.floor(Math.random() * quotes.length);
-      }
+function generateLocalRandomQuote() {
+    // Shuffle the quotes array
+    for (let i = quotes.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [quotes[i], quotes[j]] = [quotes[j], quotes[i]];
     }
   
-    const randomQuote = quotes[randomIndex];
-    lastLocalQuote = randomQuote; // Update the last displayed local quote
+    // Get the first quote from the shuffled array
+    const randomQuote = quotes[0];
   
     // Display the random quote
     document.getElementById("quote").textContent = randomQuote.content;
@@ -48,7 +45,7 @@ const quotes = [
   // Generate Random Quote
   function generateRandomQuote() {
     const randomNum = Math.random();
-    if (randomNum < 0.3) {
+    if (randomNum < 0.2) {
       // Generate quote from local data source
       generateLocalRandomQuote();
     } else {
@@ -65,22 +62,28 @@ const quotes = [
   
   // Share Quote
   function shareQuote() {
-    const quote = document.getElementById("quote").textContent;
-    const author = document.getElementById("author").textContent;
-    const shareText = `"${quote}" - ${author}`;
+    const quoteElem = document.getElementById("quote");
   
-    // Create a temporary element to hold the quote text
-    const tempElem = document.createElement("textarea");
-    tempElem.value = shareText;
-    document.body.appendChild(tempElem);
-    tempElem.select();
+    // Capture the screenshot using html2canvas
+    html2canvas(quoteElem).then((canvas) => {
+      // Convert the canvas to an image data URL
+      const imageData = canvas.toDataURL();
   
-    // Copy the quote text to the clipboard
-    document.execCommand("copy");
-    document.body.removeChild(tempElem);
+      // Create an anchor element with the image as a data URL
+      const anchorElem = document.createElement("a");
+      anchorElem.href = imageData;
+      anchorElem.download = "quote_screenshot.png";
+      anchorElem.style.display = "none";
   
-    // Show a success message
-    alert("The quote has been copied to the clipboard!");
+      // Append the anchor element to the document body
+      document.body.appendChild(anchorElem);
+  
+      // Trigger a click event on the anchor element
+      anchorElem.click();
+  
+      // Clean up by removing the anchor element
+      document.body.removeChild(anchorElem);
+    });
   }
   
   // Trigger Share
